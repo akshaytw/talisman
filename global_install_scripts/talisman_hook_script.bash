@@ -31,7 +31,7 @@ function toLower(){
 
 declare HOOKNAME="pre-commit"
 NAME=$(basename $0)
-ORG_REPO=${ORG_REPO:-'thoughtworks/talisman'}
+ORG_REPO=${ORG_REPO:-'akshaytw/talisman'}
 
 # given the various symlinks, this script may be invoked as
 #     'pre-commit', 'pre-push', 'talisman_hook_script pre-commit' or 'talisman_hook_script pre-push'

@@ -18,7 +18,7 @@ function run() {
 
 	IFS=$'\n'
 	VERSION=${VERSION:-'latest'}
-	INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'thoughtworks/talisman'}
+	INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'akshaytw/talisman'}
 
 	TALISMAN_SETUP_DIR=${HOME}/.talisman/bin # location of central install: talisman binary and hook script
 

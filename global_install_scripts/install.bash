@@ -17,7 +17,7 @@ function run() {
 	#    DEBUG="any-non-emply-value": verbose output for debugging the script
 	#    FORCE_DOWNLOAD="non-empty" : download talisman binary & hook script even if already installed. useful as an upgrade option.
 	#    VERSION="version-number"   : download a specific version of talisman
-	#    INSTALL_ORG_REPO="..."     : the github org/repo to install from (default thoughtworks/talisman)
+	#    INSTALL_ORG_REPO="..."     : the github org/repo to install from (default akshaytw/talisman)
 
 	# Download appropriate (appropriate = based on OS and ARCH) talisman binary from github
 	# Get other related install scripts from github
@@ -35,7 +35,7 @@ function run() {
 
 	IFS=$'\n'
 	VERSION=${VERSION:-'latest'}
-	INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'thoughtworks/talisman'}
+	INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'akshaytw/talisman'}
 
 	DEFAULT_GLOBAL_TEMPLATE_DIR="$HOME/.git-template" # create git-template dir here if not already setup
 	TALISMAN_SETUP_DIR=${HOME}/.talisman/bin          # location of central install: talisman binary and hook script
@@ -377,7 +377,7 @@ function run() {
     hooks:
     -   id: talisman-precommit
         name: talisman
-        entry: bash -c 'if [ -n "\${TALISMAN_HOME:-}" ]; then \${TALISMAN_HOME}/talisman_hook_script pre-commit; else echo "TALISMAN does not exist. Consider installing from https://github.com/thoughtworks/talisman . If you already have talisman installed, please ensure TALISMAN_HOME variable is set to where talisman_hook_script resides, for example, TALISMAN_HOME=\${HOME}/.talisman/bin"; fi'
+        entry: bash -c 'if [ -n "\${TALISMAN_HOME:-}" ]; then \${TALISMAN_HOME}/talisman_hook_script pre-commit; else echo "TALISMAN does not exist. Consider installing from https://github.com/akshaytw/talisman . If you already have talisman installed, please ensure TALISMAN_HOME variable is set to where talisman_hook_script resides, for example, TALISMAN_HOME=\${HOME}/.talisman/bin"; fi'
         language: system
         pass_filenames: false
         types: [text]

@@ -13,7 +13,7 @@ function run() {
     # Arguments: $1 = 'pre-commit' or 'pre-push'. whether to set talisman up as pre-commit or pre-push hook : TODO: not implemented yet
     # Environment variables:
     #    DEBUG="any-non-emply-value": verbose output for debugging the script
-    #    INSTALL_ORG_REPO="..."     : the github org/repo to install from (default thoughtworks/talisman)
+    #    INSTALL_ORG_REPO="..."     : the github org/repo to install from (default akshaytw/talisman)
     #
     # Download the script needed for uninstalling the repo level hooks
     # For each git repo found in the search root (default $HOME)
@@ -49,7 +49,7 @@ function run() {
     TALISMAN_SETUP_DIR="/usr/local/Cellar/talisman"
     TALISMAN_HOOK_SCRIPT_DIR=${HOME}/".talisman"
     TEMPLATE_DIR=$(git config --global init.templatedir) || true
-    INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'thoughtworks/talisman'}
+    INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'akshaytw/talisman'}
     SCRIPT_BASE="https://raw.githubusercontent.com/${INSTALL_ORG_REPO}/master/global_install_scripts"
 
     TEMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'talisman_uninstall')

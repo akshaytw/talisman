@@ -13,7 +13,7 @@ function run() {
     }
     export -f echo_debug
 
-    INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'thoughtworks/talisman'}
+    INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'akshaytw/talisman'}
     SCRIPT_BASE="https://raw.githubusercontent.com/${INSTALL_ORG_REPO}/master/global_install_scripts"
 
     TEMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'talisman_uninstall')
