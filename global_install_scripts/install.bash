@@ -41,7 +41,7 @@ function run() {
 	TALISMAN_SETUP_DIR=${HOME}/.talisman/bin          # location of central install: talisman binary and hook script
 	TALISMAN_HOOK_SCRIPT_PATH=${TALISMAN_SETUP_DIR}/talisman_hook_script
 	SCRIPT_ORG_REPO=${SCRIPT_ORG_REPO:-$INSTALL_ORG_REPO}
-	echo "SCRIPT ORG ${SCRIPT_ORG_REPO}"
+	echo "hello"
 	SCRIPT_BASE="https://raw.githubusercontent.com/${SCRIPT_ORG_REPO}/master/global_install_scripts"
 
 	TEMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'talisman_setup')
