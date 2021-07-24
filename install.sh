@@ -2,7 +2,7 @@
 # Hello there! If you update the talisman version, please remember to:
 # - Test that this script works with no args, and the `pre-push` / `pre-commit` arg.
 # - also update `install.sh` in the gh_pages branch of this repo, so that
-#   <https://thoughtworks.github.io/talisman/install.sh> gets updated too.
+#   <https://akshaytw.github.io/talisman/install.sh> gets updated too.
 # Thanks!
 
 set -euo pipefail
@@ -25,8 +25,8 @@ run() {
 
   IFS=$'\n'
 
-  GITHUB_URL="https://github.com/thoughtworks/talisman"
-  VERSION=$(curl --silent "https://api.github.com/repos/thoughtworks/talisman/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  GITHUB_URL="https://github.com/akshaytw/talisman"
+  VERSION=$(curl --silent "https://api.github.com/repos/akshaytw/talisman/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
   BINARY_BASE_URL="$GITHUB_URL/releases/download/$VERSION"
   REPO_HOOK_BIN_DIR=".git/hooks/bin"
 
@@ -75,10 +75,13 @@ run() {
       "Darwin")
         echo "darwin"
         ;;
-      MINGW32_NT-10.0-WOW*)
+      MINGW32_NT-*)
         echo "windows"
         ;;
-      MINGW64_NT-10.0*)
+      MINGW64_NT-*)
+        echo "windows"
+        ;;
+      MINGW64_NT-6.3*)
         echo "windows"
         ;;
       *)
@@ -173,7 +176,7 @@ EOF
   install_to_git_templates() {
     if [[ ! -t 1 ]]; then
       echo_error "Headless install to system templates is not supported."
-      echo_error "If you would like this feature, please open an issue: https://github.com/thoughtworks/talisman/issues/new"
+      echo_error "If you would like this feature, please open an issue: https://github.com/akshaytw/talisman/issues/new"
       exit $E_HEADLESS
     fi
 
