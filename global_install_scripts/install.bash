@@ -34,7 +34,7 @@ function run() {
 	E_UNSUPPORTED_ARCH=5
 
 	IFS=$'\n'
-	VERSION=${VERSION:-'latest'}
+	VERSION="v1.20.0"
 	INSTALL_ORG_REPO=${INSTALL_ORG_REPO:-'akshaytw/talisman'}
 
 	DEFAULT_GLOBAL_TEMPLATE_DIR="$HOME/.git-template" # create git-template dir here if not already setup
@@ -394,7 +394,7 @@ END_OF_SCRIPT
 	# currently doesn't check if the talisman binary and the talisman hook script are upto date
 	# would be good to create a separate script which does the upgrade and the initial install
 	if [[ ! -x ${TALISMAN_SETUP_DIR}/${TALISMAN_BINARY_NAME} || ! -x ${TALISMAN_HOOK_SCRIPT_PATH} || -n ${FORCE_DOWNLOAD} ]]; then
-		echo "Downloading talisman binary"
+		echo "Downloading talisman binary, i am here"
 		collect_version_artifact_download_urls
 		download_talisman_binary
 		echo
